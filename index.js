@@ -1,19 +1,22 @@
 const mocha = require('mocha');
+const chalk = require('chalk');
+
+const pass = `✅`;
+const error = `❌`;
 
 function EmojiReporter(runner) {
   mocha.reporters.Base.call(this, runner);
-  var passes = 0;
-  var failures = 0;
+  let passes = 0;
+  let failures = 0;
 
   runner.on('pass', function(test){
-    console.log("We passed a test!");
     passes++;
-    console.log('pass: %s', test.fullTitle());
+    console.log(`Test passed ${pass}: %s`, test.fullTitle());
   });
 
   runner.on('fail', function(test, err){
     failures++;
-    console.log('fail: %s -- error: %s', test.fullTitle(), err.message);
+    console.log(`Test failed ${error}: %s -- error: %s`, test.fullTitle(), err.message);
   });
 
   runner.on('end', function(){
@@ -22,4 +25,4 @@ function EmojiReporter(runner) {
   });
 }
 
-module.exports = MyReporter;
+module.exports = EmojiReporter;
