@@ -1,0 +1,29 @@
+{
+  "name": "mocha-emoji-reporter",
+  "version": "1.0.0",
+  "description": "Mocha reporter with emojis 💯",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "mocha": "^3.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akleiner2/mocha-emoji-reporter.git"
+  },
+  "keywords": [
+    "mocha",
+    "emoji",
+    "test"
+  ],
+  "author": "Allen Kleiner",
+  "license": "MIT ",
+  "bugs": {
+    "url": "https://github.com/akleiner2/mocha-emoji-reporter/issues"
+  },
+  "homepage": "https://github.com/akleiner2/mocha-emoji-reporter#readme"
+}
