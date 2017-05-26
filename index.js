@@ -26,18 +26,22 @@ function EmojiReporter(runner) {
     currentIndentation--;
   })
 
+  runner.on('test', () => {
+    currentIndentation++;
+  });
+
+  runner.on('test end', () => {
+    currentIndentation--;
+  })
+
   runner.on('pass', (test) => {
     passes++;
-    currentIndentation++;
     console.log(`%s ${chalk.green.bold(`Test passed ${pass}: `)} %s`, indent(), test.fullTitle());
-    currentIndentation--;
   });
 
   runner.on('fail', (test, err) => {
     failures++;
-    currentIndentation++;
     console.log(`%s ${chalk.red.bold(`Test failed ${error}: `)} %s -- error: %s`, indent(), test.fullTitle(), err.message);
-    currentIndentation--;
   });
 
   runner.on('end', () => {
