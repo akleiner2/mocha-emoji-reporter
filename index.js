@@ -18,7 +18,7 @@ function EmojiReporter(runner) {
 
   runner.on('suite', (suite) => {
     currentIndentation++;
-    console.log(`%s ${chalk.bold.inverse(suite.title)}`, indent());
+    console.log(`%s ${chalk.bold.inverse(suite.title)} (${suite.file})`, indent());
   });
 
   runner.on('suite end', (suite) => {
@@ -36,12 +36,12 @@ function EmojiReporter(runner) {
 
   runner.on('pass', (test) => {
     passes++;
-    console.log(`%s ${chalk.green.bold(`Test passed ${pass}: `)} %s`, indent(), test.fullTitle());
+    console.log(`%s ${chalk.green.bold(`Test passed ${pass} `)} %s`, indent(), test.fullTitle());
   });
 
   runner.on('fail', (test, err) => {
     failures++;
-    console.log(`%s ${chalk.red.bold(`Test failed ${error}: `)} %s -- error: %s`, indent(), test.fullTitle(), err.message);
+    console.log(`%s ${chalk.red.bold(`Test failed ${error} `)} %s -- error: %s`, indent(), test.fullTitle(), err.message);
   });
 
   runner.on('end', () => {
