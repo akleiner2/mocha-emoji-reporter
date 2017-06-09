@@ -3,7 +3,6 @@ const chalk = require('chalk');
 
 const pass = `✅`;
 const error = `❌`;
-const all = `💯`;
 
 const Base = mocha.reporters.Base;
 
